@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>N Clock</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+<div class="wrap">
+  <div class="header"><h1 class="title">N Clock</h1></div>
+  <div class="main">
+    <div class="time-display" id="display">00:00</div>
+
+    <div class="slider-box" id="sliderBox">
+      <div class="label-row">
+        <span id="labelLeft">1日の長さ</span>
+        <span id="labelHours">24 時間</span>
+      </div>
+      <input type="range" id="sliderHours" min="12" max="48" value="24">
+    </div>
+
+    <div class="tabs">
+      <div class="tab" id="tabClock">時計</div>
+      <div class="tab" id="tabStopwatch">ストップウォッチ</div>
+      <div class="tab" id="tabAlarm">アラーム</div>
+      <div class="tab" id="tabSettings">設定</div>
+      <select class="lang-select" id="langSelect"></select>
+    </div>
+
+    <!-- Stopwatch -->
+    <div class="panel" id="stopwatchArea" style="display:none">
+      <div class="controls">
+        <button class="btn-circle btn-start" id="swStart" data-key-start>Start</button>
+        <button class="btn-circle btn-rect" id="swLap" data-key="btn.lap" disabled>Lap</button>
+        <button class="btn-circle btn-rect" id="swReset" data-key="btn.reset" disabled>Reset</button>
+      </div>
+      <div class="lap-list" id="lapList"></div>
+    </div>
+
+    <!-- Alarm -->
+    <div class="panel" id="alarmArea" style="display:none">
+      <div class="alarm-controls">
+        <input type="time" class="time-input" id="alarmTime">
+        <button class="btn-large" id="alarmSetBtn" data-key="btn.addAlarm">アラーム追加</button>
+      </div>
+      <div class="alarms-container" id="alarmsContainer"></div>
+    </div>
+
+    <!-- Settings -->
+    <div class="panel" id="settingsArea" style="display:none">
+      <div class="settings-row">
+        <span class="setting-label" data-key="settings.showSeconds">秒数表示</span>
+        <label class="switch">
+          <input type="checkbox" id="secondsToggle">
+          <span class="slider-switch"></span>
+        </label>
+        <span class="sec-label" id="secondsLabel">表示</span>
+      </div>
+      <div class="settings-row">
+        <span class="setting-label" data-key="settings.language">言語</span>
+        <select class="lang-select" id="langSelectSettings"></select>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
