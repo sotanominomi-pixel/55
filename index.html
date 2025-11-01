@@ -15,7 +15,7 @@
 <body>
   <h2 style="text-align:center">N Clock — 動作確認</h2>
   <div id="display" class="time">--:--:--</div>
-  <div class="hint">このページが動けば、あなたの環境で時計は動きます。</div>
+  <div id="clock" class="clock"></div>
 
   <!-- Eruda（スマホでコンソールを見るときだけ有効） -->
   <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
@@ -46,5 +46,6 @@
     // safety: if any error occurs, it will still not block the interval
     window._nclock_test_timer = timerId;
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
